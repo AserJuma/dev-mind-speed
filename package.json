@@ -1,12 +1,21 @@
 {
-  "name": "test",
+  "name": "dev-mind-speed",
   "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
+  "description": "Circa job application task",
+  "main": "server.js",
+  "type": "module",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "dev": "npx nodemon server.js"
   },
   "keywords": [],
   "author": "",
-  "license": "ISC"
+  "license": "ISC",
+  "dependencies": {
+    "dotenv": "^16.5.0",
+    "express": "^5.1.0",
+    "mysql2": "^3.14.1"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.10"
+  }
 }
