@@ -1,35 +1,27 @@
 # DevMindSpeed Math Game API
 
-API Circa task.
-
 ## Overview
 
 Features:
 
 - Generate random arithmetic equations with adjustable difficulty levels
 - Answer submission and validation
-- Score tracking and game history and time tracking
-
-## Technology Stack
-
-- Node.js
-- Express.js
-- MySQL
+- Score tracking, game history and time tracking
 
 ## Installation
 
 1. Clone the repository:
    ```
-   git clone <repository-url>
+   git clone <repo-url>
    cd dev-mind-speed
    ```
 
 2. Install dependencies:
    ```
-   npm install
+   npm i
    ```
 
-3. Adjust local .env variables in the directory with the following variables:
+3. Adjust your local .env variables in the directory with the following variables:
    ```
    PORT=8080
    DB_HOST=your_database_host
@@ -38,7 +30,7 @@ Features:
    DB_NAME=your_database_name
    ```
 
-4. Create the required MySQL tables: (or run the SQL file)
+4. Create the required MySQL tables:
    ```sql
    CREATE TABLE games (
      id INT AUTO_INCREMENT PRIMARY KEY,
@@ -80,9 +72,6 @@ Request Body:
 }
 ```
 
-- `name`: Player's name (string)
-- `difficulty`: Level from 1-4 (number)
-
 Response:
 ```json
 {
@@ -91,11 +80,6 @@ Response:
     "question": "2 + 8",
     "time_started": "2025-05-08T07:00:19.168Z"
 }
-```
-
-### Submit an Answer
-```
-POST /game/1/submit
 ```
 
 Request Body:
@@ -121,13 +105,7 @@ Response:
     ]
 }
 ```
-
-### Check Game Status
-```
-GET /game/:game_id/status
-```
-
-Response:
+Status Response:
 ```json
 {
     "name": "Aser",
@@ -170,18 +148,6 @@ Response:
 }
 ```
 
-### Submit an Answer
-```
-POST /game/1/submit
-```
-
-Request Body:
-```json
-{
-    "answer": 55
-}
-```
-
 Response:
 ```json
 {
@@ -197,11 +163,6 @@ Response:
         }
     ]
 }
-```
-
-### Check Game Status
-```
-GET /game/:game_id/status
 ```
 
 Response:
@@ -222,6 +183,27 @@ Response:
             "given_answer": 578571000000,
             "correct": "True",
             "time_taken": "270 seconds"
+        }
+    ]
+}
+
+{
+    "name": "Faris",
+    "difficulty": 1,
+    "current_score": "1 / 2",
+    "total_time_spent": "2.32 minutes",
+    "history": [
+        {
+            "question": "4 * 8",
+            "given_answer": 555,
+            "correct": "False",
+            "time_taken": "57 seconds"
+        },
+        {
+            "question": "4 * 8",
+            "given_answer": 32,
+            "correct": "True",
+            "time_taken": "82 seconds"
         }
     ]
 }
@@ -249,7 +231,7 @@ Difficulty breakdown: (1-9, 10-99, 100-999, or 1000-9999)
 ## Error Handling
 
 - Input validation
-- Checking records
+- Checking record(s) existence
 - Database connection issues
 - Expression evaluation errors
 
@@ -269,5 +251,5 @@ Score is calculated from game history, checking which questions were answered co
 
 Security Considerations
 
-Input Validation: Basic input validation is performed but could be enhanced with more comprehensive sanitization.
+Input Validation: Basic input validation is done, but more can be added.
 Queries: Prepared Statement used for more reliability.
