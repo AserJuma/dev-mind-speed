@@ -6,7 +6,7 @@ Features:
 
 - Generate random arithmetic equations with adjustable difficulty levels
 - Answer submission and validation
-- Score tracking and game history and time tracking
+- Score tracking, game history and time tracking
 
 ## Installation
 
@@ -18,10 +18,10 @@ Features:
 
 2. Install dependencies:
    ```
-   npm install
+   npm i
    ```
 
-3. Adjust local .env variables in the directory with the following variables:
+3. Adjust your local .env variables in the directory with the following variables:
    ```
    PORT=8080
    DB_HOST=your_database_host
@@ -30,7 +30,7 @@ Features:
    DB_NAME=your_database_name
    ```
 
-4. Create the required MySQL tables: (or run the SQL file)
+4. Create the required MySQL tables:
    ```sql
    CREATE TABLE games (
      id INT AUTO_INCREMENT PRIMARY KEY,
