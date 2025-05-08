@@ -251,6 +251,5 @@ Score is calculated from game history, checking which questions were answered co
 
 Security Considerations
 
-Input Validation: Basic input validation is performed but could be enhanced with more comprehensive sanitization.
+Input Validation: Basic input validation is done, but more can be added.
 Queries: Prepared Statement used for more reliability.
-Type Safety: More can be done to reinforce type-safety.
