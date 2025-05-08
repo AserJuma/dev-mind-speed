@@ -12,7 +12,7 @@ Features:
 
 1. Clone the repository:
    ```
-   git clone <repository-url>
+   git clone <repo-url>
    cd dev-mind-speed
    ```
 
@@ -72,9 +72,6 @@ Request Body:
 }
 ```
 
-- `name`: Player's name (string)
-- `difficulty`: Level from 1-4 (number)
-
 Response:
 ```json
 {
@@ -83,11 +80,6 @@ Response:
     "question": "2 + 8",
     "time_started": "2025-05-08T07:00:19.168Z"
 }
-```
-
-### Submit an Answer
-```
-POST /game/1/submit
 ```
 
 Request Body:
@@ -113,13 +105,7 @@ Response:
     ]
 }
 ```
-
-### Check Game Status
-```
-GET /game/:game_id/status
-```
-
-Response:
+Status Response:
 ```json
 {
     "name": "Aser",
@@ -162,18 +148,6 @@ Response:
 }
 ```
 
-### Submit an Answer
-```
-POST /game/1/submit
-```
-
-Request Body:
-```json
-{
-    "answer": 55
-}
-```
-
 Response:
 ```json
 {
@@ -189,11 +163,6 @@ Response:
         }
     ]
 }
-```
-
-### Check Game Status
-```
-GET /game/:game_id/status
 ```
 
 Response:
@@ -214,6 +183,27 @@ Response:
             "given_answer": 578571000000,
             "correct": "True",
             "time_taken": "270 seconds"
+        }
+    ]
+}
+
+{
+    "name": "Faris",
+    "difficulty": 1,
+    "current_score": "1 / 2",
+    "total_time_spent": "2.32 minutes",
+    "history": [
+        {
+            "question": "4 * 8",
+            "given_answer": 555,
+            "correct": "False",
+            "time_taken": "57 seconds"
+        },
+        {
+            "question": "4 * 8",
+            "given_answer": 32,
+            "correct": "True",
+            "time_taken": "82 seconds"
         }
     ]
 }
@@ -263,3 +253,4 @@ Security Considerations
 
 Input Validation: Basic input validation is performed but could be enhanced with more comprehensive sanitization.
 Queries: Prepared Statement used for more reliability.
+Type Safety: More can be done to reinforce type-safety.
