@@ -1,7 +1,5 @@
 # DevMindSpeed Math Game API
 
-API Circa task.
-
 ## Overview
 
 Features:
@@ -9,12 +7,6 @@ Features:
 - Generate random arithmetic equations with adjustable difficulty levels
 - Answer submission and validation
 - Score tracking and game history and time tracking
-
-## Technology Stack
-
-- Node.js
-- Express.js
-- MySQL
 
 ## Installation
 
@@ -249,7 +241,7 @@ Difficulty breakdown: (1-9, 10-99, 100-999, or 1000-9999)
 ## Error Handling
 
 - Input validation
-- Checking records
+- Checking record(s) existence
 - Database connection issues
 - Expression evaluation errors
 
